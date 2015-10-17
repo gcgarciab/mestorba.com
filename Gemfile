@@ -14,13 +14,24 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'bcrypt'
 gem 'sass'
 gem 'haml'
 gem 'mongoid', '~>3.0.0'
+gem 'omniauth-facebook'
 
 # Test requirements
-gem 'rspec', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+group :development, :test do
+  gem 'dotenv'
+end
+
+
+# Test requirements
+group :test do
+  gem 'rspec'
+  gem 'rack-test', :require => 'rack/test'
+end
+
 
 # Padrino Stable Gem
 gem 'padrino', '0.12.5'

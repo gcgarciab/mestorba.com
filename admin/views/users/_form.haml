@@ -1,0 +1,43 @@
+- error = @user.errors.include?(:name)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:email)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :email, :class => 'control-label'
+  .controls
+    =f.text_field :email, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:email, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:cellphone)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :cellphone, :class => 'control-label'
+  .controls
+    =f.text_field :cellphone, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:cellphone, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:uid)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :uid, :class => 'control-label'
+  .controls
+    =f.text_field :uid, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:uid, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:status)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :status, :class => 'control-label'
+  .controls
+    =f.text_field :status, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:status, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:access_token)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :access_token, :class => 'control-label'
+  .controls
+    =f.text_field :access_token, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:access_token, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:users, :index), :class => 'btn btn-default'

@@ -28,9 +28,12 @@
 Padrino.configure_apps do
   # enable :sessions
   set :session_secret, '1352e0363506e79c862e26729b85596eb18f94c6b308039ca750bfb09fc6994b'
-  set :protection, :except => :path_traversal
-  set :protect_from_csrf, true
+  #set :protection, :except => [ :path_traversal, :session_hijacking ]
+  #set :protect_from_csrf, true
+  set :protection, false
 end
 
 # Mounts the core application for this project
+
+Padrino.mount("Mestorba::Admin", :app_file => Padrino.root('admin/app.rb')).to("/admin")
 Padrino.mount('Mestorba::App', :app_file => Padrino.root('app/app.rb')).to('/')

@@ -7,3 +7,4 @@
 :stylesheet: sass
 :namespace: Mestorba
 :migration_format: number
+:admin_renderer: haml
