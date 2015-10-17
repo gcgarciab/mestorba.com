@@ -1,0 +1,9 @@
+---
+:orm: mongoid
+:test: rspec
+:mock: none
+:script: jquery
+:renderer: haml
+:stylesheet: sass
+:namespace: Mestorba
+:migration_format: number
